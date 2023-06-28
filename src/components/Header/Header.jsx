@@ -1,4 +1,4 @@
-import "./Header.scss";
+import React from "react"
 import Search from "./Search/Search"
 import Cart from "../Cart/Cart"
 import { TbSearch } from "react-icons/tb"
@@ -13,7 +13,6 @@ const Header = () => {
     const [showSearch, setShowSearch] = useState(false)
     const handleScroll = ()=>{
         const offset = window.scrollY;
-        console.log(offset)
         if(offset > 200){
             setScrollVal(true)
         }

@@ -1,6 +1,6 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
-import prod from "../../../assets/products/earbuds-prod-1.webp"
+import prod from "../../../assets/products/boat_BS_3.jpg"
 import "./CartItem.scss";
 const CartItem = () => {
     return (
