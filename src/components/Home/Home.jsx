@@ -11,23 +11,22 @@ import { fetchDataFromApi } from "../../store/slices/productSlice";
 const Home = () => {
     const dispatch = useDispatch()
     const {categoryList, productList} = useSelector((state) => ({categoryList: state.product.categories, productList :state.product.products}));
-    console.log("the use Selector", productList)
-    useEffect(() =>{
-        getCatgories()
-        getProducts()
-    },[])
+    console.log("the use Selector", categoryList)
 
     const getCatgories=()=>{
         fetchDataFromApi("/api/categories?populate=* ").then(response => {
             dispatch(addCategories(response))
         })
     }
-
     const getProducts = ()=>{
         fetchDataFromApi("/api/products?populate=*").then(response =>{
             dispatch(addProducts(response))
         })
     }
+    useEffect(() =>{
+        getCatgories()
+        getProducts()
+    },[])
     return (
         <>
             <div className="home">
@@ -42,5 +41,4 @@ const Home = () => {
         </>
     )
 };
-
 export default Home;

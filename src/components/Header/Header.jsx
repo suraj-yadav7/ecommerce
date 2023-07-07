@@ -7,6 +7,7 @@ import { AiOutlineHeart } from "react-icons/ai"
 import "./Header.scss"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux"
 
 const Header = () => {
     const [scrollVal, setScrollVal] = useState(false)
@@ -25,6 +26,18 @@ const Header = () => {
     },[])
 
     const [showCart, setShowCart] = useState(false)
+    const [cartCount, setCartCount] = useState()
+    const {cartItem} = useSelector((state)=>({cartItem: state.product.cartItem}))
+    useEffect(()=>{
+        let count = 0
+        if(cartItem.length>=1){
+            cartItem.map((elem)=>{
+                count += elem.attributes.quantity
+            })
+
+        }
+        setCartCount(count)
+    },[cartItem])
 
     return (
         <>
@@ -40,7 +53,7 @@ const Header = () => {
                         <TbSearch onClick={()=>setShowSearch(true)} />
                         <AiOutlineHeart />
                         <span className="cart-icon" onClick={()=>setShowCart(true)}> 
-                            <CgShoppingCart />1
+                            <CgShoppingCart />{cartCount}
                         </span>
                     </div>
                 </div >

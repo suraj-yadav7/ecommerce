@@ -12,7 +12,7 @@ const Category = ({categoriesData}) => {
                 {
                    categoriesData && categoriesData.data.map((elem,index)=> (
                         <div key={index} className="category"  onClick={()=>navigate(`/category/${elem.id}`)}>
-                        <img src={baseUrl+elem.attributes.img.data.attributes.url} alt="category"/>
+                        <img src={baseUrl+elem.attributes.img.data[0].attributes.url} alt="category"/>
                         </div>
                     ))
                 }
@@ -21,5 +21,4 @@ const Category = ({categoriesData}) => {
     </>
     )
 };
-
 export default Category;

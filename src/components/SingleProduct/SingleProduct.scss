@@ -32,6 +32,7 @@
             .right {
                 display: flex;
                 flex-direction: column;
+                // justify-content: space-around;
                 padding-top: 20px;
                 @include md {
                     padding: 0 35px;
@@ -64,14 +65,17 @@
 
                 .cart-buttons {
                     display: flex;
+                    justify-content: center;
+                    align-items: center;
                     @include md {
                         margin-top: 30px;
                     }
                     .quantity-buttons {
                         width: fit-content;
+                        // margin: 10px 0px;
                         display: flex;
-                        border: 2px solid rgba(0, 0, 0, 0.2);
-                        margin-right: 10px;
+                        justify-content: space-between;
+                        border: 2px solid rgba(0, 0, 0, 0.2); 
                         height: 50px;
                         span {
                             font-size: 18px;
@@ -95,7 +99,8 @@
                     .add-to-cart-button {
                         outline: 0;
                         border: 0;
-                        height: 50px;
+                        height: 47px;
+                        // margin: 0 5px;
                         width: 180px;
                         display: flex;
                         align-items: center;
@@ -116,10 +121,9 @@
                 }
 
                 .divider {
-                    margin: 20px 0;
+                    margin: 10px 0;
                     height: 1px;
-                    width: 100%;
-                    background-color: rgba(0, 0, 0, 0.1);
+                    width: 10%;
                 }
 
                 .info-item {
@@ -128,7 +132,7 @@
                         font-weight: 500;
                         display: block;
                         &:nth-child(1) {
-                            margin-bottom: 20px;
+                            margin-bottom: 12px;
                         }
                         span {
                             font-size: 16px;
@@ -137,7 +141,7 @@
                             color: #6b6b6b;
                         }
                         svg {
-                            margin: 0 5px;
+                            margin: 0 2px;
                         }
                     }
                 }
